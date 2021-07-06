@@ -1,2 +1,0 @@
-# QuizApp
- django quiz app
