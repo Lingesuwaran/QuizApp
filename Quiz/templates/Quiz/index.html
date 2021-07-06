@@ -1,0 +1,34 @@
+{% extends "Quiz/base.html" %}
+{% block content %}
+    <div class="wrapper">
+         <div class="title">
+            Login Form
+         </div>
+         <form class="login_form" method="POST" action="/login_submission/">
+             {% csrf_token %}
+            <div class="field">
+               <input name="e-mailID" type="text" required>
+               <label>Email Address</label>
+            </div>
+            <div class="field">
+               <input name="password" type="password" required>
+               <label>Password</label>
+            </div>
+            <div class="content">
+               <div class="checkbox">
+                  <input type="checkbox" id="remember-me">
+                  <label for="remember-me">Remember me</label>
+               </div>
+            </div>
+            <div class="field">
+               <input type="submit" value="Login">
+            </div>
+            <div class="signup-link">
+               Not a member? <a href="sign_up">Signup now</a>
+            </div>
+             <div class="signup-link">
+               Teacher's login <a href="admin">Click here</a>
+            </div>
+         </form>
+      </div>
+{% endblock content %}

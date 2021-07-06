@@ -1,0 +1,30 @@
+{% extends "Quiz/base.html" %}
+{% block content %}
+      <div class="wrapper">
+         <div class="title">
+            Signup Form
+         </div>
+         <form class="signup_form" method="POST" action="/signup_submission/">
+            {% csrf_token %}
+            <div class="field">
+               <input name="e-mailID" type="text" required>
+               <label>Enter the email ID</label>
+            </div>
+            <div class="field">
+               <input name="password" type="password" required>
+               <label>Enter the password</label>
+            </div>
+			<div class="field">
+				<select name="type-of-login" id="t-login">
+					<option value="Student">Student</option>
+				</select>
+			</div>
+            <div class="field">
+               <input type="submit" value="Signup">
+            </div>
+            <div class="signup-link">
+               Aready a member? <a href="/">Signin now</a>
+            </div>
+         </form>
+      </div>
+{% endblock content %}
