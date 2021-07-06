@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+from whitenoise import WhiteNoise
+import whitenoise
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,7 +28,7 @@ SECRET_KEY = 'django-insecure-!4%5w9xqhj4m+@^$boq9*wwrpv@1uub$r02oz)ow@5d!(9%lhb
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['django-quiz-web.herokuapp.com']
+ALLOWED_HOSTS = ['django-quiz-web.herokuapp.com','127.0.0.1']
 
 
 # Application definition
@@ -52,7 +54,7 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 ROOT_URLCONF = 'QuizApp.urls'
 
@@ -143,7 +145,7 @@ STATICFILES_DIRS = (
 
 STATIC_ROOT = os.path.join(BASE_DIR, "live-static-files", "static-root")
 
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+#STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 #STATIC_ROOT = "/home/cfedeploy/webapps/cfehome_static_root/"
 
